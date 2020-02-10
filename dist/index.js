@@ -160,11 +160,15 @@ function slugify(str) {
 
 // https://help.github.com/en/actions/automating-your-workflow-with-github-actions/using-environment-variables#default-environment-variables
 try {
-    splitted_github_repository = process.env.GITHUB_REPOSITORY.split('/');  // octocat/Hello-World
+    splitted_github_repository = process.env.GITHUB_REPOSITORY.split('/'); // octocat/Hello-World
     process.env['GITHUB_REPO_OWNER'] = slugify(splitted_github_repository[0]);
+    core.info(`Set GITHUB_REPO_OWNER=${process.env.GITHUB_REPO_OWNER}`);
     process.env['GITHUB_REPO_NAME'] = slugify(splitted_github_repository[1]);
-    splitted_github_ref = process.env.GITHUB_REF.split('/');  // refs/heads/feature-branch-1
+    core.info(`Set GITHUB_REPO_NAME=${process.env.GITHUB_REPO_NAME}`);
+
+    splitted_github_ref = process.env.GITHUB_REF.split('/'); // refs/heads/feature-branch-1
     process.env['GITHUB_BRANCH_NAME'] = slugify(splitted_github_ref[2]);
+    core.info(`Set GITHUB_BRANCH_NAME=${process.env.GITHUB_BRANCH_NAME}`);
 } catch (error) {
     core.setFailed(error.message);
 }
