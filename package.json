@@ -1,7 +1,7 @@
 {
   "name": "github-env-vars-action",
   "version": "0.0.1",
-  "description": "GitHub Environment Variables Action",
+  "description": "GitHub Action to expose useful Environment Variables.",
   "main": "index.js",
   "scripts": {
     "build": "ncc build index.js",

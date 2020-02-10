@@ -1,5 +1,5 @@
 name: 'GitHub Environment Variables Action'
-description: 'Get useful Environment Variables.'
+description: 'Expose useful Environment Variables.'
 author: 'Franz Diebold'
 runs:
   using: 'node12'
