@@ -1,6 +1,6 @@
 # :octocat: :rocket: GitHub Environment Variables Action
 
-A GitHub Action to expose useful Environment Variables.
+A [GitHub Action](https://github.com/features/actions) to expose useful environment variables:
 
 | Environment Variable Name | Example value             |
 |---------------------------|---------------------------|
