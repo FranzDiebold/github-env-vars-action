@@ -28,7 +28,7 @@ For a full list of default environment variables exposed by GitHub see [https://
 ```yaml
 steps:
   - uses: franzdiebold/github-env-vars-action@v1.0.0
-  - name: Print environment variables
+    name: Print environment variables
     run: |
       echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
       echo "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME"
