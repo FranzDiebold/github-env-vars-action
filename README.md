@@ -2,6 +2,8 @@
 
 A [GitHub Action](https://github.com/features/actions) to expose useful environment variables.
 
+> This action is only supported on Linux! Currently, there is no support for Windows or macOS.
+
 ### Environment Variables exposed by **this Action**
 
 | Environment Variable Name | Description                                                                                                                           | Example value             |
