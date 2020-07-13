@@ -1,0 +1,40 @@
+name: Demo
+
+on: [push]
+
+jobs:
+  linux:
+    name: Linux Demo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: franzdiebold/github-env-vars-action@v1.1.0
+      - name: Print environment variables
+        run: |
+          echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
+          echo "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME"
+          echo "GITHUB_REF_NAME=$GITHUB_REF_NAME"
+          echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
+
+  windows:
+    name: Windows Demo
+    runs-on: windows-latest
+    steps:
+      - uses: franzdiebold/github-env-vars-action@v1.1.0
+      - name: Print environment variables
+        run: |
+          echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
+          echo "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME"
+          echo "GITHUB_REF_NAME=$GITHUB_REF_NAME"
+          echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
+
+  macos:
+    name: macOS Demo
+    runs-on: macos-latest
+    steps:
+      - uses: franzdiebold/github-env-vars-action@v1.1.0
+      - name: Print environment variables
+        run: |
+          echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
+          echo "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME"
+          echo "GITHUB_REF_NAME=$GITHUB_REF_NAME"
+          echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
