@@ -2,8 +2,8 @@ name: 'GitHub Environment Variables Action'
 description: 'Expose useful Environment Variables.'
 author: 'Franz Diebold'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: 'node12'
+  main: 'dist/index.js'
 branding:
   icon: 'plus-circle'
   color: 'green'

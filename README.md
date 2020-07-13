@@ -1,8 +1,9 @@
 # :octocat: :rocket: GitHub Environment Variables Action
 
-A [GitHub Action](https://github.com/features/actions) to expose useful environment variables.
+[![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
+[version](https://img.shields.io/github/package-json/v/FranzDiebold/github-env-vars-action)
 
-> This action is only supported on Linux! Currently, there is no support for Windows or macOS.
+A [GitHub Action](https://github.com/features/actions) to expose useful environment variables.
 
 ### Environment Variables exposed by **this Action**
 
@@ -29,7 +30,7 @@ For a full list of default environment variables exposed by GitHub see [https://
 
 ```yaml
 steps:
-  - uses: franzdiebold/github-env-vars-action@v1.0.0
+  - uses: franzdiebold/github-env-vars-action@v1.1.0
   - name: Print environment variables
     run: |
       echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
