@@ -40,3 +40,7 @@ steps:
       echo "GITHUB_REF_NAME=$GITHUB_REF_NAME"
       echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
 ```
+
+### Demo
+
+A demo for all Operating systems (Linux, macOS and Windows) is also available in the [demo workflows file of this repository](.github/workflows/demo.yml)!
