@@ -1,7 +1,9 @@
 # :octocat: :rocket: GitHub Environment Variables Action
 
+[![GitHub Action: View on Marketplace](https://img.shields.io/badge/GitHub%20Action-View_on_Marketplace-28a745?logo=github)](https://github.com/marketplace/actions/github-environment-variables-action)
+[![Demo: available](https://img.shields.io/badge/Demo-available-orange)](https://github.com/FranzDiebold/github-env-vars-action/actions?query=workflow%3ADemo)
+[version](https://img.shields.io/github/package-json/v/FranzDiebold/github-env-vars-action/primary?label=version)
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
-[version](https://img.shields.io/github/package-json/v/FranzDiebold/github-env-vars-action)
 
 A [GitHub Action](https://github.com/features/actions) to expose useful environment variables.
 
@@ -38,3 +40,7 @@ steps:
       echo "GITHUB_REF_NAME=$GITHUB_REF_NAME"
       echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
 ```
+
+### Demo
+
+A demo for all Operating systems (Linux, macOS and Windows) is also available in the [demo workflows file of this repository](.github/workflows/demo.yml)!
