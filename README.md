@@ -1,7 +1,7 @@
 # :octocat: :rocket: GitHub Environment Variables Action
 
 [![GitHub Action: View on Marketplace](https://img.shields.io/badge/GitHub%20Action-View_on_Marketplace-28a745?logo=github)](https://github.com/marketplace/actions/github-environment-variables-action)
-[![Demo: available](https://img.shields.io/badge/Demo-available-orange)](https://github.com/FranzDiebold/github-env-vars-action/actions?query=workflow%3ADemo)
+[![Demo: available](https://img.shields.io/badge/Demo-available-orange)](.github/workflows/demo.yml)
 [version](https://img.shields.io/github/package-json/v/FranzDiebold/github-env-vars-action/primary?label=version)
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
 
@@ -32,7 +32,7 @@ For a full list of default environment variables exposed by GitHub see [https://
 
 ```yaml
 steps:
-  - uses: franzdiebold/github-env-vars-action@v1.1.1
+  - uses: franzdiebold/github-env-vars-action@v1.1.2
   - name: Print environment variables
     run: |
       echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
