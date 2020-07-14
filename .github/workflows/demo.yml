@@ -8,33 +8,51 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: franzdiebold/github-env-vars-action@v1.1.2
-      - name: Print environment variables
+      - name: Print environment variables exposed by this action
         run: |
           echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
           echo "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME"
           echo "GITHUB_REF_NAME=$GITHUB_REF_NAME"
           echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
+      - name: Print environment variables exposed by GitHub
+        run: |
+          echo "GITHUB_ACTOR=$GITHUB_ACTOR"
+          echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
+          echo "GITHUB_SHA=$GITHUB_SHA"
+          echo "GITHUB_REF=$GITHUB_REF"
 
   windows:
     name: Windows Demo
     runs-on: windows-latest
     steps:
       - uses: franzdiebold/github-env-vars-action@v1.1.2
-      - name: Print environment variables
+      - name: Print environment variables exposed by this action
         run: |
           echo "GITHUB_REPOSITORY_OWNER=$Env:GITHUB_REPOSITORY_OWNER"
           echo "GITHUB_REPOSITORY_NAME=$Env:GITHUB_REPOSITORY_NAME"
           echo "GITHUB_REF_NAME=$Env:GITHUB_REF_NAME"
           echo "GITHUB_SHA_SHORT=$Env:GITHUB_SHA_SHORT"
+      - name: Print environment variables exposed by GitHub
+        run: |
+          echo "GITHUB_ACTOR=$Env:GITHUB_ACTOR"
+          echo "GITHUB_REPOSITORY=$Env:GITHUB_REPOSITORY"
+          echo "GITHUB_SHA=$Env:GITHUB_SHA"
+          echo "GITHUB_REF=$Env:GITHUB_REF"
 
   macos:
     name: macOS Demo
     runs-on: macos-latest
     steps:
       - uses: franzdiebold/github-env-vars-action@v1.1.2
-      - name: Print environment variables
+      - name: Print environment variables exposed by this action
         run: |
           echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
           echo "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME"
           echo "GITHUB_REF_NAME=$GITHUB_REF_NAME"
           echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
+      - name: Print environment variables exposed by GitHub
+        run: |
+          echo "GITHUB_ACTOR=$GITHUB_ACTOR"
+          echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
+          echo "GITHUB_SHA=$GITHUB_SHA"
+          echo "GITHUB_REF=$GITHUB_REF"
