@@ -7,7 +7,7 @@ jobs:
     name: Linux Demo
     runs-on: ubuntu-latest
     steps:
-      - uses: franzdiebold/github-env-vars-action@latest
+      - uses: franzdiebold/github-env-vars-action@1.1.2
       - name: Print environment variables exposed by this action
         run: |
           echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
@@ -25,7 +25,7 @@ jobs:
     name: Windows Demo
     runs-on: windows-latest
     steps:
-      - uses: franzdiebold/github-env-vars-action@latest
+      - uses: franzdiebold/github-env-vars-action@1.1.2
       - name: Print environment variables exposed by this action
         run: |
           echo "GITHUB_REPOSITORY_OWNER=$Env:GITHUB_REPOSITORY_OWNER"
@@ -43,7 +43,7 @@ jobs:
     name: macOS Demo
     runs-on: macos-latest
     steps:
-      - uses: franzdiebold/github-env-vars-action@latest
+      - uses: franzdiebold/github-env-vars-action@1.1.2
       - name: Print environment variables exposed by this action
         run: |
           echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
