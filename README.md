@@ -2,7 +2,7 @@
 
 [![GitHub Action: View on Marketplace](https://img.shields.io/badge/GitHub%20Action-View_on_Marketplace-28a745?logo=github)](https://github.com/marketplace/actions/github-environment-variables-action)
 [![Demo: available](https://img.shields.io/badge/Demo-available-orange)](.github/workflows/demo.yml)
-[version](https://img.shields.io/github/package-json/v/FranzDiebold/github-env-vars-action/primary?label=version)
+![Version: v1.1.3](https://img.shields.io/badge/Version-v1.1.3-brightgreen)
 [![Lint and Test](https://github.com/FranzDiebold/github-env-vars-action/workflows/Lint%20and%20Test/badge.svg)](https://github.com/FranzDiebold/github-env-vars-action/actions?query=workflow%3A%22Lint+and+Test%22)
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
 
@@ -29,11 +29,11 @@ For a full list of default environment variables exposed by GitHub see [https://
 | `GITHUB_SHA`              | The commit SHA that triggered the workflow.                                                                                                 | `ffac537e6cbbf934b08745a378932722df287a53` |
 | `GITHUB_REF`              | The branch or tag ref that triggered the workflow. If neither a branch or tag is available for the event type, the variable will not exist. | `refs/heads/feat/feature-branch-1`         |
 
-## Example usage
+## :rocket: Example usage
 
 ```yaml
 steps:
-  - uses: franzdiebold/github-env-vars-action@v1.1.2
+  - uses: FranzDiebold/github-env-vars-action@v1.1.3
   - name: Print environment variables
     run: |
       echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
