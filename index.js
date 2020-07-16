@@ -102,7 +102,7 @@ try {
   ref = process.env.GITHUB_REF;
 
   if (ref) {
-    core.exportVariable('GITHUB_REF_SLUG', slufigy(ref));
+    core.exportVariable('GITHUB_REF_SLUG', slugify(ref));
     core.info(`Set GITHUB_REF_SLUG=${process.env.GITHUB_REF_SLUG}`);
   } else {
     core.warning('Environment variable "GITHUB_REF" not set. ' +
@@ -114,7 +114,7 @@ try {
     core.exportVariable('GITHUB_REF_NAME', refName);
     core.info(`Set GITHUB_REF_NAME=${process.env.GITHUB_REF_NAME}`);
 
-    core.exportVariable('GITHUB_REF_NAME_SLUG', slufigy(refName));
+    core.exportVariable('GITHUB_REF_NAME_SLUG', slugify(refName));
     core.info(`Set GITHUB_REF_NAME_SLUG=${process.env.GITHUB_REF_NAME_SLUG}`);
   } else {
     core.warning('Environment variable "GITHUB_REF" not set. ' +
