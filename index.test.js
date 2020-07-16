@@ -1,6 +1,18 @@
 const {
-  getRepositoryOwner, getRepositoryName, getRefName, getShaShort,
+  slugify, getRepositoryOwner, getRepositoryName, getRefName, getShaShort,
 } = require('./index');
+
+test('slugifies text', () => {
+  expect(slugify(' /abc+efg*123/test§xyz ')).toEqual('abc-efg-123-test-xyz');
+});
+
+test('slugifies ref name with dash', () => {
+  expect(slugify('feat/feature-branch-1')).toEqual('feat-feature-branch-1');
+});
+
+test('slugifies empty text', () => {
+  expect(slugify('')).toEqual('');
+});
 
 test('gets repository owner', () => {
   expect(getRepositoryOwner('FranzDiebold/github-env-vars-action'))
