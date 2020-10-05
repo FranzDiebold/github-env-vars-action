@@ -2,7 +2,7 @@
 
 [![GitHub Action: View on Marketplace](https://img.shields.io/badge/GitHub%20Action-View_on_Marketplace-28a745?logo=github)](https://github.com/marketplace/actions/github-environment-variables-action)
 [![Demo: available](https://img.shields.io/badge/Demo-available-orange)](.github/workflows/demo.yml)
-[![Version: v1.2.0](https://img.shields.io/badge/Version-v1.2.0-brightgreen)](https://github.com/FranzDiebold/github-env-vars-action/releases/tag/v1.2.0)
+[![Version: v1.2.1](https://img.shields.io/badge/Version-v1.2.1-brightgreen)](https://github.com/FranzDiebold/github-env-vars-action/releases/tag/v1.2.1)
 [![Lint and Test](https://github.com/FranzDiebold/github-env-vars-action/workflows/Lint%20and%20Test/badge.svg)](https://github.com/FranzDiebold/github-env-vars-action/actions?query=workflow%3A%22Lint+and+Test%22)
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
 
@@ -39,7 +39,7 @@ For a full list of default environment variables exposed by GitHub see [https://
 
 ```yaml
 steps:
-  - uses: FranzDiebold/github-env-vars-action@v1.2.0
+  - uses: FranzDiebold/github-env-vars-action@v1.2.1
   - name: Print environment variables
     run: |
       echo "GITHUB_REPOSITORY_SLUG=$GITHUB_REPOSITORY_SLUG"
