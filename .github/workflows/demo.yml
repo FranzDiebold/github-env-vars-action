@@ -7,7 +7,7 @@ jobs:
     name: Linux Demo
     runs-on: ubuntu-latest
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.0
+      - uses: FranzDiebold/github-env-vars-action@v1.2.1
       - name: Print environment variables exposed by this action
         run: |
           echo "GITHUB_REPOSITORY_SLUG=$GITHUB_REPOSITORY_SLUG"
@@ -30,7 +30,7 @@ jobs:
     name: Windows Demo
     runs-on: windows-latest
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.0
+      - uses: FranzDiebold/github-env-vars-action@v1.2.1
       - name: Print environment variables exposed by this action
         run: |
           echo "GITHUB_REPOSITORY_SLUG=$Env:GITHUB_REPOSITORY_SLUG"
@@ -53,7 +53,7 @@ jobs:
     name: macOS Demo
     runs-on: macos-latest
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.0
+      - uses: FranzDiebold/github-env-vars-action@v1.2.1
       - name: Print environment variables exposed by this action
         run: |
           echo "GITHUB_REPOSITORY_SLUG=$GITHUB_REPOSITORY_SLUG"
