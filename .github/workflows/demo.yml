@@ -1,6 +1,6 @@
 name: Demo
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   linux:
@@ -25,6 +25,13 @@ jobs:
           echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
           echo "GITHUB_SHA=$GITHUB_SHA"
           echo "GITHUB_REF=$GITHUB_REF"
+          echo "GITHUB_ACTION=$GITHUB_ACTION"
+          echo "GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME"
+          echo "GITHUB_EVENT_PATH=$GITHUB_EVENT_PATH"
+          echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
+          echo "GITHUB_HEAD_REF=$GITHUB_HEAD_REF"
+          echo "GITHUB_BASE_REF=$GITHUB_BASE_REF"
+          echo "GITHUB_RUN_ID=$GITHUB_RUN_ID"
 
   windows:
     name: Windows Demo
@@ -48,6 +55,13 @@ jobs:
           echo "GITHUB_REPOSITORY=$Env:GITHUB_REPOSITORY"
           echo "GITHUB_SHA=$Env:GITHUB_SHA"
           echo "GITHUB_REF=$Env:GITHUB_REF"
+          echo "GITHUB_ACTION=$Env:GITHUB_ACTION"
+          echo "GITHUB_EVENT_NAME=$Env:GITHUB_EVENT_NAME"
+          echo "GITHUB_EVENT_PATH=$Env:GITHUB_EVENT_PATH"
+          echo "GITHUB_WORKSPACE=$Env:GITHUB_WORKSPACE"
+          echo "GITHUB_HEAD_REF=$Env:GITHUB_HEAD_REF"
+          echo "GITHUB_BASE_REF=$Env:GITHUB_BASE_REF"
+          echo "GITHUB_RUN_ID=$Env:GITHUB_RUN_ID"
 
   macos:
     name: macOS Demo
@@ -71,3 +85,10 @@ jobs:
           echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
           echo "GITHUB_SHA=$GITHUB_SHA"
           echo "GITHUB_REF=$GITHUB_REF"
+          echo "GITHUB_ACTION=$GITHUB_ACTION"
+          echo "GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME"
+          echo "GITHUB_EVENT_PATH=$GITHUB_EVENT_PATH"
+          echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
+          echo "GITHUB_HEAD_REF=$GITHUB_HEAD_REF"
+          echo "GITHUB_BASE_REF=$GITHUB_BASE_REF"
+          echo "GITHUB_RUN_ID=$GITHUB_RUN_ID"
