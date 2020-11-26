@@ -122,6 +122,40 @@ try {
                  '"GITHUB_REF_NAME_SLUG".');
   }
 
+  headRef = process.env.GITHUB_HEAD_REF;
+
+  branchName = headRef || refName;
+  if (branchName) {
+    core.exportVariable('GITHUB_BRANCH_NAME', branchName);
+    core.info(`Set GITHUB_BRANCH_NAME=${process.env.GITHUB_BRANCH_NAME}`);
+
+    core.exportVariable('GITHUB_BRANCH_NAME_SLUG', slugify(branchName));
+    core.info('Set GITHUB_BRANCH_NAME_SLUG=' +
+              `${process.env.GITHUB_BRANCH_NAME_SLUG}`);
+  } else {
+    core.warning('Environment variables "GITHUB_REF" and ' +
+                 '"GITHUB_HEAD_REF" not set. ' +
+                 'Cannot set "GITHUB_BRANCH_NAME" and ' +
+                 '"GITHUB_BRANCH_NAME_SLUG".');
+  }
+
+  if (headRef) {
+    core.exportVariable('GITHUB_HEAD_REF_SLUG', slugify(headRef));
+    core.info(`Set GITHUB_HEAD_REF_SLUG=${process.env.GITHUB_HEAD_REF_SLUG}`);
+  } else {
+    core.warning('Environment variable "GITHUB_HEAD_REF" not set. ' +
+                 'Cannot set "GITHUB_HEAD_REF_SLUG".');
+  }
+
+  baseRef = process.env.GITHUB_BASE_REF;
+  if (baseRef) {
+    core.exportVariable('GITHUB_BASE_REF_SLUG', slugify(baseRef));
+    core.info(`Set GITHUB_BASE_REF_SLUG=${process.env.GITHUB_BASE_REF_SLUG}`);
+  } else {
+    core.warning('Environment variable "GITHUB_BASE_REF" not set. ' +
+                 'Cannot set "GITHUB_BASE_REF_SLUG".');
+  }
+
   // i.e. ffac537e6cbbf934b08745a378932722df287a53
   shaShort = getShaShort(process.env.GITHUB_SHA);
   if (shaShort) {
