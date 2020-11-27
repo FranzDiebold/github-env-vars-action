@@ -7,7 +7,7 @@ jobs:
     name: Linux Demo
     runs-on: ubuntu-latest
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.1
+      - uses: FranzDiebold/github-env-vars-action@v1.3.0
       - name: Print environment variables exposed by this action
         run: |
           echo "GITHUB_REPOSITORY_SLUG=$GITHUB_REPOSITORY_SLUG"
@@ -16,8 +16,12 @@ jobs:
           echo "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME"
           echo "GITHUB_REPOSITORY_NAME_SLUG=$GITHUB_REPOSITORY_NAME_SLUG"
           echo "GITHUB_REF_SLUG=$GITHUB_REF_SLUG"
+          echo "GITHUB_BRANCH_NAME=$GITHUB_BRANCH_NAME"
+          echo "GITHUB_BRANCH_NAME_SLUG=$GITHUB_BRANCH_NAME_SLUG"
           echo "GITHUB_REF_NAME=$GITHUB_REF_NAME"
           echo "GITHUB_REF_NAME_SLUG=$GITHUB_REF_NAME_SLUG"
+          echo "GITHUB_HEAD_REF_SLUG=$GITHUB_HEAD_REF_SLUG"
+          echo "GITHUB_BASE_REF_SLUG=$GITHUB_BASE_REF_SLUG"
           echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
       - name: Print environment variables exposed by GitHub
         run: |
@@ -37,7 +41,7 @@ jobs:
     name: Windows Demo
     runs-on: windows-latest
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.1
+      - uses: FranzDiebold/github-env-vars-action@v1.3.0
       - name: Print environment variables exposed by this action
         run: |
           echo "GITHUB_REPOSITORY_SLUG=$Env:GITHUB_REPOSITORY_SLUG"
@@ -46,8 +50,12 @@ jobs:
           echo "GITHUB_REPOSITORY_NAME=$Env:GITHUB_REPOSITORY_NAME"
           echo "GITHUB_REPOSITORY_NAME_SLUG=$Env:GITHUB_REPOSITORY_NAME_SLUG"
           echo "GITHUB_REF_SLUG=$Env:GITHUB_REF_SLUG"
+          echo "GITHUB_BRANCH_NAME=$Env:GITHUB_BRANCH_NAME"
+          echo "GITHUB_BRANCH_NAME_SLUG=$Env:GITHUB_BRANCH_NAME_SLUG"
           echo "GITHUB_REF_NAME=$Env:GITHUB_REF_NAME"
           echo "GITHUB_REF_NAME_SLUG=$Env:GITHUB_REF_NAME_SLUG"
+          echo "GITHUB_HEAD_REF_SLUG=$Env:GITHUB_HEAD_REF_SLUG"
+          echo "GITHUB_BASE_REF_SLUG=$Env:GITHUB_BASE_REF_SLUG"
           echo "GITHUB_SHA_SHORT=$Env:GITHUB_SHA_SHORT"
       - name: Print environment variables exposed by GitHub
         run: |
@@ -67,7 +75,7 @@ jobs:
     name: macOS Demo
     runs-on: macos-latest
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.2.1
+      - uses: FranzDiebold/github-env-vars-action@v1.3.0
       - name: Print environment variables exposed by this action
         run: |
           echo "GITHUB_REPOSITORY_SLUG=$GITHUB_REPOSITORY_SLUG"
@@ -76,8 +84,12 @@ jobs:
           echo "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME"
           echo "GITHUB_REPOSITORY_NAME_SLUG=$GITHUB_REPOSITORY_NAME_SLUG"
           echo "GITHUB_REF_SLUG=$GITHUB_REF_SLUG"
+          echo "GITHUB_BRANCH_NAME=$GITHUB_BRANCH_NAME"
+          echo "GITHUB_BRANCH_NAME_SLUG=$GITHUB_BRANCH_NAME_SLUG"
           echo "GITHUB_REF_NAME=$GITHUB_REF_NAME"
           echo "GITHUB_REF_NAME_SLUG=$GITHUB_REF_NAME_SLUG"
+          echo "GITHUB_HEAD_REF_SLUG=$GITHUB_HEAD_REF_SLUG"
+          echo "GITHUB_BASE_REF_SLUG=$GITHUB_BASE_REF_SLUG"
           echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
       - name: Print environment variables exposed by GitHub
         run: |
