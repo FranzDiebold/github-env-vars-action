@@ -35,6 +35,7 @@ jobs:
           echo "GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME"
           echo "GITHUB_ACTION=$GITHUB_ACTION"
           echo "GITHUB_RUN_NUMBER=$GITHUB_RUN_NUMBER"
+          echo "GITHUB_WORKFLOW=$GITHUB_WORKFLOW"
 
   windows:
     name: Windows Demo
@@ -68,6 +69,7 @@ jobs:
           echo "GITHUB_EVENT_NAME=$Env:GITHUB_EVENT_NAME"
           echo "GITHUB_ACTION=$Env:GITHUB_ACTION"
           echo "GITHUB_RUN_NUMBER=$Env:GITHUB_RUN_NUMBER"
+          echo "GITHUB_WORKFLOW=$Env:GITHUB_WORKFLOW"
 
   macos:
     name: macOS Demo
@@ -101,3 +103,4 @@ jobs:
           echo "GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME"
           echo "GITHUB_ACTION=$GITHUB_ACTION"
           echo "GITHUB_RUN_NUMBER=$GITHUB_RUN_NUMBER"
+          echo "GITHUB_WORKFLOW=$GITHUB_WORKFLOW"
