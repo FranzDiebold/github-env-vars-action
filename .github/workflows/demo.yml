@@ -7,22 +7,28 @@ jobs:
     name: Linux Demo
     runs-on: ubuntu-latest
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.3.0
+      - uses: FranzDiebold/github-env-vars-action@v2
       - name: Print environment variables exposed by this action
         run: |
-          echo "GITHUB_REPOSITORY_SLUG=$GITHUB_REPOSITORY_SLUG"
-          echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
-          echo "GITHUB_REPOSITORY_OWNER_SLUG=$GITHUB_REPOSITORY_OWNER_SLUG"
-          echo "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME"
-          echo "GITHUB_REPOSITORY_NAME_SLUG=$GITHUB_REPOSITORY_NAME_SLUG"
-          echo "GITHUB_REF_SLUG=$GITHUB_REF_SLUG"
-          echo "GITHUB_BRANCH_NAME=$GITHUB_BRANCH_NAME"
-          echo "GITHUB_BRANCH_NAME_SLUG=$GITHUB_BRANCH_NAME_SLUG"
-          echo "GITHUB_REF_NAME=$GITHUB_REF_NAME"
-          echo "GITHUB_REF_NAME_SLUG=$GITHUB_REF_NAME_SLUG"
-          echo "GITHUB_HEAD_REF_SLUG=$GITHUB_HEAD_REF_SLUG"
-          echo "GITHUB_BASE_REF_SLUG=$GITHUB_BASE_REF_SLUG"
-          echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
+          echo "CI_REPOSITORY_SLUG=$CI_REPOSITORY_SLUG"
+          echo "CI_REPOSITORY_OWNER=$CI_REPOSITORY_OWNER"
+          echo "CI_REPOSITORY_OWNER_SLUG=$CI_REPOSITORY_OWNER_SLUG"
+          echo "CI_REPOSITORY_NAME=$CI_REPOSITORY_NAME"
+          echo "CI_REPOSITORY_NAME_SLUG=$CI_REPOSITORY_NAME_SLUG"
+          echo "CI_REPOSITORY=$CI_REPOSITORY"
+          echo "CI_REF_SLUG=$CI_REF_SLUG"
+          echo "CI_ACTION_REF_NAME=$CI_ACTION_REF_NAME"
+          echo "CI_ACTION_REF_NAME_SLUG=$CI_ACTION_REF_NAME_SLUG"
+          echo "CI_REF_NAME=$CI_REF_NAME"
+          echo "CI_REF_NAME_SLUG=$CI_REF_NAME_SLUG"
+          echo "CI_REF=$CI_REF"
+          echo "CI_HEAD_REF_SLUG=$CI_HEAD_REF_SLUG"
+          echo "CI_HEAD_REF=$CI_HEAD_REF"
+          echo "CI_BASE_REF_SLUG=$CI_BASE_REF_SLUG"
+          echo "CI_BASE_REF=$CI_BASE_REF"
+          echo "CI_SHA_SHORT=$CI_SHA_SHORT"
+          echo "CI_SHA=$CI_SHA"
+          echo "CI_ACTOR=$CI_ACTOR"
       - name: Print environment variables exposed by GitHub
         run: |
           echo "GITHUB_ACTOR=$GITHUB_ACTOR"
@@ -41,22 +47,28 @@ jobs:
     name: Windows Demo
     runs-on: windows-latest
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.3.0
+      - uses: FranzDiebold/github-env-vars-action@v2
       - name: Print environment variables exposed by this action
         run: |
-          echo "GITHUB_REPOSITORY_SLUG=$Env:GITHUB_REPOSITORY_SLUG"
-          echo "GITHUB_REPOSITORY_OWNER=$Env:GITHUB_REPOSITORY_OWNER"
-          echo "GITHUB_REPOSITORY_OWNER_SLUG=$Env:GITHUB_REPOSITORY_OWNER_SLUG"
-          echo "GITHUB_REPOSITORY_NAME=$Env:GITHUB_REPOSITORY_NAME"
-          echo "GITHUB_REPOSITORY_NAME_SLUG=$Env:GITHUB_REPOSITORY_NAME_SLUG"
-          echo "GITHUB_REF_SLUG=$Env:GITHUB_REF_SLUG"
-          echo "GITHUB_BRANCH_NAME=$Env:GITHUB_BRANCH_NAME"
-          echo "GITHUB_BRANCH_NAME_SLUG=$Env:GITHUB_BRANCH_NAME_SLUG"
-          echo "GITHUB_REF_NAME=$Env:GITHUB_REF_NAME"
-          echo "GITHUB_REF_NAME_SLUG=$Env:GITHUB_REF_NAME_SLUG"
-          echo "GITHUB_HEAD_REF_SLUG=$Env:GITHUB_HEAD_REF_SLUG"
-          echo "GITHUB_BASE_REF_SLUG=$Env:GITHUB_BASE_REF_SLUG"
-          echo "GITHUB_SHA_SHORT=$Env:GITHUB_SHA_SHORT"
+          echo "CI_REPOSITORY_SLUG=$Env:CI_REPOSITORY_SLUG"
+          echo "CI_REPOSITORY_OWNER=$Env:CI_REPOSITORY_OWNER"
+          echo "CI_REPOSITORY_OWNER_SLUG=$Env:CI_REPOSITORY_OWNER_SLUG"
+          echo "CI_REPOSITORY_NAME=$Env:CI_REPOSITORY_NAME"
+          echo "CI_REPOSITORY_NAME_SLUG=$Env:CI_REPOSITORY_NAME_SLUG"
+          echo "CI_REPOSITORY=$Env:CI_REPOSITORY"
+          echo "CI_REF_SLUG=$Env:CI_REF_SLUG"
+          echo "CI_ACTION_REF_NAME=$Env:CI_ACTION_REF_NAME"
+          echo "CI_ACTION_REF_NAME_SLUG=$Env:CI_ACTION_REF_NAME_SLUG"
+          echo "CI_REF_NAME=$Env:CI_REF_NAME"
+          echo "CI_REF_NAME_SLUG=$Env:CI_REF_NAME_SLUG"
+          echo "CI_REF=$Env:CI_REF"
+          echo "CI_HEAD_REF_SLUG=$Env:CI_HEAD_REF_SLUG"
+          echo "CI_HEAD_REF=$Env:CI_HEAD_REF"
+          echo "CI_BASE_REF_SLUG=$Env:CI_BASE_REF_SLUG"
+          echo "CI_BASE_REF=$Env:CI_BASE_REF"
+          echo "CI_SHA_SHORT=$Env:CI_SHA_SHORT"
+          echo "CI_SHA=$Env:CI_SHA"
+          echo "CI_ACTOR=$Env:CI_ACTOR"
       - name: Print environment variables exposed by GitHub
         run: |
           echo "GITHUB_ACTOR=$Env:GITHUB_ACTOR"
@@ -75,22 +87,28 @@ jobs:
     name: macOS Demo
     runs-on: macos-latest
     steps:
-      - uses: FranzDiebold/github-env-vars-action@v1.3.0
+      - uses: FranzDiebold/github-env-vars-action@v2
       - name: Print environment variables exposed by this action
         run: |
-          echo "GITHUB_REPOSITORY_SLUG=$GITHUB_REPOSITORY_SLUG"
-          echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
-          echo "GITHUB_REPOSITORY_OWNER_SLUG=$GITHUB_REPOSITORY_OWNER_SLUG"
-          echo "GITHUB_REPOSITORY_NAME=$GITHUB_REPOSITORY_NAME"
-          echo "GITHUB_REPOSITORY_NAME_SLUG=$GITHUB_REPOSITORY_NAME_SLUG"
-          echo "GITHUB_REF_SLUG=$GITHUB_REF_SLUG"
-          echo "GITHUB_BRANCH_NAME=$GITHUB_BRANCH_NAME"
-          echo "GITHUB_BRANCH_NAME_SLUG=$GITHUB_BRANCH_NAME_SLUG"
-          echo "GITHUB_REF_NAME=$GITHUB_REF_NAME"
-          echo "GITHUB_REF_NAME_SLUG=$GITHUB_REF_NAME_SLUG"
-          echo "GITHUB_HEAD_REF_SLUG=$GITHUB_HEAD_REF_SLUG"
-          echo "GITHUB_BASE_REF_SLUG=$GITHUB_BASE_REF_SLUG"
-          echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
+          echo "CI_REPOSITORY_SLUG=$CI_REPOSITORY_SLUG"
+          echo "CI_REPOSITORY_OWNER=$CI_REPOSITORY_OWNER"
+          echo "CI_REPOSITORY_OWNER_SLUG=$CI_REPOSITORY_OWNER_SLUG"
+          echo "CI_REPOSITORY_NAME=$CI_REPOSITORY_NAME"
+          echo "CI_REPOSITORY_NAME_SLUG=$CI_REPOSITORY_NAME_SLUG"
+          echo "CI_REPOSITORY=$CI_REPOSITORY"
+          echo "CI_REF_SLUG=$CI_REF_SLUG"
+          echo "CI_ACTION_REF_NAME=$CI_ACTION_REF_NAME"
+          echo "CI_ACTION_REF_NAME_SLUG=$CI_ACTION_REF_NAME_SLUG"
+          echo "CI_REF_NAME=$CI_REF_NAME"
+          echo "CI_REF_NAME_SLUG=$CI_REF_NAME_SLUG"
+          echo "CI_REF=$CI_REF"
+          echo "CI_HEAD_REF_SLUG=$CI_HEAD_REF_SLUG"
+          echo "CI_HEAD_REF=$CI_HEAD_REF"
+          echo "CI_BASE_REF_SLUG=$CI_BASE_REF_SLUG"
+          echo "CI_BASE_REF=$CI_BASE_REF"
+          echo "CI_SHA_SHORT=$CI_SHA_SHORT"
+          echo "CI_SHA=$CI_SHA"
+          echo "CI_ACTOR=$CI_ACTOR"
       - name: Print environment variables exposed by GitHub
         run: |
           echo "GITHUB_ACTOR=$GITHUB_ACTOR"
