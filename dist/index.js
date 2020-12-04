@@ -192,6 +192,26 @@ try {
   actor = process.env.GITHUB_ACTOR;
   core.exportVariable('CI_ACTOR', actor);
   core.info(`Set CI_ACTOR=${process.env.CI_ACTOR}`);
+
+  eventName = process.env.GITHUB_EVENT_NAME;
+  core.exportVariable('CI_EVENT_NAME', eventName);
+  core.info(`Set CI_EVENT_NAME=${process.env.CI_EVENT_NAME}`);
+
+  runId = process.env.GITHUB_RUN_ID;
+  core.exportVariable('CI_RUN_ID', runId);
+  core.info(`Set CI_RUN_ID=${process.env.CI_RUN_ID}`);
+
+  runNumber = process.env.GITHUB_RUN_NUMBER;
+  core.exportVariable('CI_RUN_NUMBER', runNumber);
+  core.info(`Set CI_RUN_NUMBER=${process.env.CI_RUN_NUMBER}`);
+
+  workflow = process.env.GITHUB_WORKFLOW;
+  core.exportVariable('CI_WORKFLOW', workflow);
+  core.info(`Set CI_WORKFLOW=${process.env.CI_WORKFLOW}`);
+
+  action = process.env.GITHUB_ACTION;
+  core.exportVariable('CI_ACTION', action);
+  core.info(`Set CI_ACTION=${process.env.CI_ACTION}`);
 } catch (error) {
   core.setFailed(error.message);
 }
