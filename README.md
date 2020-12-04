@@ -2,7 +2,7 @@
 
 [![GitHub Action: View on Marketplace](https://img.shields.io/badge/GitHub%20Action-View_on_Marketplace-28a745?logo=github)](https://github.com/marketplace/actions/github-environment-variables-action)
 [![Demo: available](https://img.shields.io/badge/Demo-available-orange)](.github/workflows/demo.yml)
-[![Version: v2.0.0](https://img.shields.io/badge/Version-v2.0.0-brightgreen)](https://github.com/FranzDiebold/github-env-vars-action/releases/tag/v2.0.0)
+[![Version: v2.1.0](https://img.shields.io/badge/Version-v2.1.0-brightgreen)](https://github.com/FranzDiebold/github-env-vars-action/releases/tag/v2.1.0)
 [![Lint and Test](https://github.com/FranzDiebold/github-env-vars-action/workflows/Lint%20and%20Test/badge.svg)](https://github.com/FranzDiebold/github-env-vars-action/actions?query=workflow%3A%22Lint+and+Test%22)
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
 
@@ -31,6 +31,11 @@ A [GitHub Action](https://github.com/features/actions) to expose useful environm
 | `CI_SHA_SHORT`             | The shortened commit SHA (8 characters) that triggered the workflow.                                                                                           | `ffac537e`                                 |
 | `CI_SHA`                   | The commit SHA that triggered the workflow. Copy of `GITHUB_SHA` - for reasons of completeness.                                                                | `ffac537e6cbbf934b08745a378932722df287a53` |
 | `CI_ACTOR`                 | The name of the person or app that initiated the workflow. Copy of `GITHUB_ACTOR` - for reasons of completeness.                                               | `octocat`                                  |
+| `CI_EVENT_NAME`            | The name of the webhook event that triggered the workflow. Copy of `GITHUB_EVENT_NAME` - for reasons of completeness.                                          | `push` or `pull_request`                   |
+| `CI_RUN_ID`                | A unique number for each run within a repository. This number does not change if you re-run the workflow run. Copy of `GITHUB_RUN_ID` - for reasons of completeness. | `397746731`                          |
+| `CI_RUN_NUMBER`            | A unique number for each run of a particular workflow in a repository. This number begins at 1 for the workflow's first run, and increments with each new run. This number does not change if you re-run the workflow run. Copy of `GITHUB_RUN_NUMBER` - for reasons of completeness. | `73` |
+| `CI_WORKFLOW`              | The name of the workflow. Copy of `GITHUB_WORKFLOW` - for reasons of completeness.                                                                             | `Demo`                                     |
+| `CI_ACTION`                | The unique identifier (`id`) of the action. Copy of `GITHUB_ACTION` - for reasons of completeness.                                                             | `run2`                                     |
 
 > The [slugified](https://en.wikipedia.org/wiki/Clean_URL#Slug) values are designed to be used in a URL.
 
@@ -46,6 +51,11 @@ For a full list of default environment variables exposed by GitHub see [https://
 | `GITHUB_REF`              | The branch or tag ref that triggered the workflow. <br>If neither a branch or tag is available for the event type, the variable will not exist. | `refs/heads/feat/feature-branch-1`         |
 | `GITHUB_HEAD_REF`         | Only set for forked repositories / pull request. The branch of the head repository / the head branch name.                                      | `feat/feature-branch-1`                    |
 | `GITHUB_BASE_REF`         | Only set for forked repositories / pull request. The branch of the base repository / the base branch name.                                      | `main`                                     |
+| `GITHUB_EVENT_NAME`       | The name of the webhook event that triggered the workflow.                                                                                      | `push`                                     |
+| `GITHUB_RUN_ID`           | A unique number for each run within a repository. This number does not change if you re-run the workflow run.                                   | `397746731`                                |
+| `GITHUB_RUN_NUMBER`       | A unique number for each run of a particular workflow in a repository. This number begins at 1 for the workflow's first run, and increments with each new run. This number does not change if you re-run the workflow run. | `73` |
+| `GITHUB_WORKFLOW`         | The name of the workflow.                                                                                                                       | `Demo`                                     |
+| `GITHUB_ACTION`           | The unique identifier (`id`) of the action.                                                                                                     | `run2`                                     |
 
 ## :rocket: Example usage
 
@@ -73,6 +83,11 @@ steps:
       echo "CI_SHA_SHORT=$CI_SHA_SHORT"
       echo "CI_SHA=$CI_SHA"
       echo "CI_ACTOR=$CI_ACTOR"
+      echo "CI_EVENT_NAME=$CI_EVENT_NAME"
+      echo "CI_RUN_ID=$CI_RUN_ID"
+      echo "CI_RUN_NUMBER=$CI_RUN_NUMBER"
+      echo "CI_WORKFLOW=$CI_WORKFLOW"
+      echo "CI_ACTION=$CI_ACTION"
 ```
 
 ### Demo
