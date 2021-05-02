@@ -9,11 +9,11 @@ const core = require('@actions/core');
  */
 function slugify(inputString) {
   return inputString
-    .toLowerCase()
-    .replace(/[^a-z0-9 -]/g, ' ') // remove invalid chars
-    .replace(/^\s+|\s+$/g, '') // trim
-    .replace(/\s+/g, '-') // collapse whitespace and replace by -
-    .replace(/-+/g, '-'); // collapse dashes
+      .toLowerCase()
+      .replace(/[^a-z0-9 -]/g, ' ') // remove invalid chars
+      .replace(/^\s+|\s+$/g, '') // trim
+      .replace(/\s+/g, '-') // collapse whitespace and replace by -
+      .replace(/-+/g, '-'); // collapse dashes
 }
 
 /**
@@ -74,7 +74,7 @@ try {
       `${process.env.CI_REPOSITORY_OWNER}`);
 
     core.exportVariable('CI_REPOSITORY_OWNER_SLUG',
-      slugify(repositoryOwner));
+        slugify(repositoryOwner));
     core.info(`Set CI_REPOSITORY_OWNER_SLUG=` +
       `${process.env.CI_REPOSITORY_OWNER_SLUG}`);
   } else {
@@ -90,7 +90,7 @@ try {
       `${process.env.CI_REPOSITORY_NAME}`);
 
     core.exportVariable('CI_REPOSITORY_NAME_SLUG',
-      slugify(repositoryName));
+        slugify(repositoryName));
     core.info(`Set CI_REPOSITORY_NAME_SLUG=` +
       `${process.env.CI_REPOSITORY_NAME_SLUG}`);
   } else {
