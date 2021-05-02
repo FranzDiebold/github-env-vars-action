@@ -1,13 +1,12 @@
-module.exports =
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 932:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Franz Diebold
 
-const core = __webpack_require__(186);
+const core = __nccwpck_require__(186);
 
 /**
  * Slugify a given string.
@@ -68,42 +67,42 @@ try {
   if (repository) {
     core.exportVariable('CI_REPOSITORY_SLUG', slugify(repository));
     core.info(`Set CI_REPOSITORY_SLUG=` +
-              `${process.env.CI_REPOSITORY_SLUG}`);
+      `${process.env.CI_REPOSITORY_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_REPOSITORY" not set. ' +
-                 'Cannot set "CI_REPOSITORY_SLUG".');
+    core.info('Environment variable "GITHUB_REPOSITORY" not set. ' +
+      'Cannot set "CI_REPOSITORY_SLUG".');
   }
 
   repositoryOwner = getRepositoryOwner(repository);
   if (repositoryOwner) {
     core.exportVariable('CI_REPOSITORY_OWNER', repositoryOwner);
     core.info(`Set CI_REPOSITORY_OWNER=` +
-              `${process.env.CI_REPOSITORY_OWNER}`);
+      `${process.env.CI_REPOSITORY_OWNER}`);
 
     core.exportVariable('CI_REPOSITORY_OWNER_SLUG',
         slugify(repositoryOwner));
     core.info(`Set CI_REPOSITORY_OWNER_SLUG=` +
-              `${process.env.CI_REPOSITORY_OWNER_SLUG}`);
+      `${process.env.CI_REPOSITORY_OWNER_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_REPOSITORY" not set. ' +
-                 'Cannot set "CI_REPOSITORY_OWNER" and ' +
-                 '"CI_REPOSITORY_OWNER_SLUG".');
+    core.info('Environment variable "GITHUB_REPOSITORY" not set. ' +
+      'Cannot set "CI_REPOSITORY_OWNER" and ' +
+      '"CI_REPOSITORY_OWNER_SLUG".');
   }
 
   repositoryName = getRepositoryName(repository);
   if (repositoryName) {
     core.exportVariable('CI_REPOSITORY_NAME', repositoryName);
     core.info(`Set CI_REPOSITORY_NAME=` +
-              `${process.env.CI_REPOSITORY_NAME}`);
+      `${process.env.CI_REPOSITORY_NAME}`);
 
     core.exportVariable('CI_REPOSITORY_NAME_SLUG',
         slugify(repositoryName));
     core.info(`Set CI_REPOSITORY_NAME_SLUG=` +
-              `${process.env.CI_REPOSITORY_NAME_SLUG}`);
+      `${process.env.CI_REPOSITORY_NAME_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_REPOSITORY" not set. ' +
-                 'Cannot set "CI_REPOSITORY_NAME" and ' +
-                 '"CI_REPOSITORY_NAME_SLUG".');
+    core.info('Environment variable "GITHUB_REPOSITORY" not set. ' +
+      'Cannot set "CI_REPOSITORY_NAME" and ' +
+      '"CI_REPOSITORY_NAME_SLUG".');
   }
 
   core.exportVariable('CI_REPOSITORY', repository);
@@ -116,8 +115,8 @@ try {
     core.exportVariable('CI_REF_SLUG', slugify(ref));
     core.info(`Set CI_REF_SLUG=${process.env.CI_REF_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_REF" not set. ' +
-                 'Cannot set "CI_REF_SLUG".');
+    core.info('Environment variable "GITHUB_REF" not set. ' +
+      'Cannot set "CI_REF_SLUG".');
   }
 
   refName = getRefName(ref);
@@ -128,9 +127,9 @@ try {
     core.exportVariable('CI_REF_NAME_SLUG', slugify(refName));
     core.info(`Set CI_REF_NAME_SLUG=${process.env.CI_REF_NAME_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_REF" not set. ' +
-                 'Cannot set "CI_REF_NAME" and ' +
-                 '"CI_REF_NAME_SLUG".');
+    core.info('Environment variable "GITHUB_REF" not set. ' +
+      'Cannot set "CI_REF_NAME" and ' +
+      '"CI_REF_NAME_SLUG".');
   }
 
   core.exportVariable('CI_REF', ref);
@@ -145,20 +144,20 @@ try {
 
     core.exportVariable('CI_ACTION_REF_NAME_SLUG', slugify(branchName));
     core.info('Set CI_ACTION_REF_NAME_SLUG=' +
-              `${process.env.CI_ACTION_REF_NAME_SLUG}`);
+      `${process.env.CI_ACTION_REF_NAME_SLUG}`);
   } else {
-    core.warning('Environment variables "GITHUB_REF" and ' +
-                 '"GITHUB_HEAD_REF" not set. ' +
-                 'Cannot set "CI_ACTION_REF_NAME" and ' +
-                 '"CI_ACTION_REF_NAME_SLUG".');
+    core.info('Environment variables "GITHUB_REF" and ' +
+      '"GITHUB_HEAD_REF" not set. ' +
+      'Cannot set "CI_ACTION_REF_NAME" and ' +
+      '"CI_ACTION_REF_NAME_SLUG".');
   }
 
   if (headRef) {
     core.exportVariable('CI_HEAD_REF_SLUG', slugify(headRef));
     core.info(`Set CI_HEAD_REF_SLUG=${process.env.CI_HEAD_REF_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_HEAD_REF" not set. ' +
-                 'Cannot set "CI_HEAD_REF_SLUG".');
+    core.info('Environment variable "GITHUB_HEAD_REF" not set. ' +
+      'Cannot set "CI_HEAD_REF_SLUG".');
   }
 
   core.exportVariable('CI_HEAD_REF', headRef);
@@ -169,8 +168,8 @@ try {
     core.exportVariable('CI_BASE_REF_SLUG', slugify(baseRef));
     core.info(`Set CI_BASE_REF_SLUG=${process.env.CI_BASE_REF_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_BASE_REF" not set. ' +
-                 'Cannot set "CI_BASE_REF_SLUG".');
+    core.info('Environment variable "GITHUB_BASE_REF" not set. ' +
+      'Cannot set "CI_BASE_REF_SLUG".');
   }
 
   core.exportVariable('CI_BASE_REF', baseRef);
@@ -182,8 +181,8 @@ try {
     core.exportVariable('CI_SHA_SHORT', getShaShort(sha));
     core.info(`Set CI_SHA_SHORT=${process.env.CI_SHA_SHORT}`);
   } else {
-    core.warning('Environment variable "GITHUB_SHA" not set. ' +
-                 'Cannot set "CI_SHA_SHORT".');
+    core.info('Environment variable "GITHUB_SHA" not set. ' +
+      'Cannot set "CI_SHA_SHORT".');
   }
 
   core.exportVariable('CI_SHA', sha);
@@ -228,7 +227,7 @@ module.exports = {
 /***/ }),
 
 /***/ 351:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
 
@@ -240,8 +239,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const os = __importStar(__webpack_require__(87));
-const utils_1 = __webpack_require__(278);
+const os = __importStar(__nccwpck_require__(87));
+const utils_1 = __nccwpck_require__(278);
 /**
  * Commands
  *
@@ -314,7 +313,7 @@ function escapeProperty(s) {
 /***/ }),
 
 /***/ 186:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
 
@@ -335,11 +334,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const command_1 = __webpack_require__(351);
-const file_command_1 = __webpack_require__(717);
-const utils_1 = __webpack_require__(278);
-const os = __importStar(__webpack_require__(87));
-const path = __importStar(__webpack_require__(622));
+const command_1 = __nccwpck_require__(351);
+const file_command_1 = __nccwpck_require__(717);
+const utils_1 = __nccwpck_require__(278);
+const os = __importStar(__nccwpck_require__(87));
+const path = __importStar(__nccwpck_require__(622));
 /**
  * The code to exit an action
  */
@@ -423,6 +422,7 @@ exports.getInput = getInput;
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function setOutput(name, value) {
+    process.stdout.write(os.EOL);
     command_1.issueCommand('set-output', { name }, value);
 }
 exports.setOutput = setOutput;
@@ -559,7 +559,7 @@ exports.getState = getState;
 /***/ }),
 
 /***/ 717:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
 
@@ -574,9 +574,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const fs = __importStar(__webpack_require__(747));
-const os = __importStar(__webpack_require__(87));
-const utils_1 = __webpack_require__(278);
+const fs = __importStar(__nccwpck_require__(747));
+const os = __importStar(__nccwpck_require__(87));
+const utils_1 = __nccwpck_require__(278);
 function issueCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
     if (!filePath) {
@@ -650,10 +650,11 @@ module.exports = require("path");;
 /******/ 	var __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
+/******/ 	function __nccwpck_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -665,7 +666,7 @@ module.exports = require("path");;
 /******/ 		// Execute the module function
 /******/ 		var threw = true;
 /******/ 		try {
-/******/ 			__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 			__webpack_modules__[moduleId].call(module.exports, module, module.exports, __nccwpck_require__);
 /******/ 			threw = false;
 /******/ 		} finally {
 /******/ 			if(threw) delete __webpack_module_cache__[moduleId];
@@ -678,10 +679,13 @@ module.exports = require("path");;
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
-/******/ 	__webpack_require__.ab = __dirname + "/";/************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
+/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";/************************************************************************/
+/******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(932);
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __nccwpck_require__(932);
+/******/ 	module.exports = __webpack_exports__;
+/******/ 	
 /******/ })()
 ;
