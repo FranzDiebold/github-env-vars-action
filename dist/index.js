@@ -16,11 +16,11 @@ const core = __webpack_require__(186);
  */
 function slugify(inputString) {
   return inputString
-      .toLowerCase()
-      .replace(/[^a-z0-9 -]/g, ' ') // remove invalid chars
-      .replace(/^\s+|\s+$/g, '') // trim
-      .replace(/\s+/g, '-') // collapse whitespace and replace by -
-      .replace(/-+/g, '-'); // collapse dashes
+    .toLowerCase()
+    .replace(/[^a-z0-9 -]/g, ' ') // remove invalid chars
+    .replace(/^\s+|\s+$/g, '') // trim
+    .replace(/\s+/g, '-') // collapse whitespace and replace by -
+    .replace(/-+/g, '-'); // collapse dashes
 }
 
 /**
@@ -68,42 +68,42 @@ try {
   if (repository) {
     core.exportVariable('CI_REPOSITORY_SLUG', slugify(repository));
     core.info(`Set CI_REPOSITORY_SLUG=` +
-              `${process.env.CI_REPOSITORY_SLUG}`);
+      `${process.env.CI_REPOSITORY_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_REPOSITORY" not set. ' +
-                 'Cannot set "CI_REPOSITORY_SLUG".');
+    core.info('Environment variable "GITHUB_REPOSITORY" not set. ' +
+      'Cannot set "CI_REPOSITORY_SLUG".');
   }
 
   repositoryOwner = getRepositoryOwner(repository);
   if (repositoryOwner) {
     core.exportVariable('CI_REPOSITORY_OWNER', repositoryOwner);
     core.info(`Set CI_REPOSITORY_OWNER=` +
-              `${process.env.CI_REPOSITORY_OWNER}`);
+      `${process.env.CI_REPOSITORY_OWNER}`);
 
     core.exportVariable('CI_REPOSITORY_OWNER_SLUG',
-        slugify(repositoryOwner));
+      slugify(repositoryOwner));
     core.info(`Set CI_REPOSITORY_OWNER_SLUG=` +
-              `${process.env.CI_REPOSITORY_OWNER_SLUG}`);
+      `${process.env.CI_REPOSITORY_OWNER_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_REPOSITORY" not set. ' +
-                 'Cannot set "CI_REPOSITORY_OWNER" and ' +
-                 '"CI_REPOSITORY_OWNER_SLUG".');
+    core.info('Environment variable "GITHUB_REPOSITORY" not set. ' +
+      'Cannot set "CI_REPOSITORY_OWNER" and ' +
+      '"CI_REPOSITORY_OWNER_SLUG".');
   }
 
   repositoryName = getRepositoryName(repository);
   if (repositoryName) {
     core.exportVariable('CI_REPOSITORY_NAME', repositoryName);
     core.info(`Set CI_REPOSITORY_NAME=` +
-              `${process.env.CI_REPOSITORY_NAME}`);
+      `${process.env.CI_REPOSITORY_NAME}`);
 
     core.exportVariable('CI_REPOSITORY_NAME_SLUG',
-        slugify(repositoryName));
+      slugify(repositoryName));
     core.info(`Set CI_REPOSITORY_NAME_SLUG=` +
-              `${process.env.CI_REPOSITORY_NAME_SLUG}`);
+      `${process.env.CI_REPOSITORY_NAME_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_REPOSITORY" not set. ' +
-                 'Cannot set "CI_REPOSITORY_NAME" and ' +
-                 '"CI_REPOSITORY_NAME_SLUG".');
+    core.info('Environment variable "GITHUB_REPOSITORY" not set. ' +
+      'Cannot set "CI_REPOSITORY_NAME" and ' +
+      '"CI_REPOSITORY_NAME_SLUG".');
   }
 
   core.exportVariable('CI_REPOSITORY', repository);
@@ -116,8 +116,8 @@ try {
     core.exportVariable('CI_REF_SLUG', slugify(ref));
     core.info(`Set CI_REF_SLUG=${process.env.CI_REF_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_REF" not set. ' +
-                 'Cannot set "CI_REF_SLUG".');
+    core.info('Environment variable "GITHUB_REF" not set. ' +
+      'Cannot set "CI_REF_SLUG".');
   }
 
   refName = getRefName(ref);
@@ -128,9 +128,9 @@ try {
     core.exportVariable('CI_REF_NAME_SLUG', slugify(refName));
     core.info(`Set CI_REF_NAME_SLUG=${process.env.CI_REF_NAME_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_REF" not set. ' +
-                 'Cannot set "CI_REF_NAME" and ' +
-                 '"CI_REF_NAME_SLUG".');
+    core.info('Environment variable "GITHUB_REF" not set. ' +
+      'Cannot set "CI_REF_NAME" and ' +
+      '"CI_REF_NAME_SLUG".');
   }
 
   core.exportVariable('CI_REF', ref);
@@ -145,20 +145,20 @@ try {
 
     core.exportVariable('CI_ACTION_REF_NAME_SLUG', slugify(branchName));
     core.info('Set CI_ACTION_REF_NAME_SLUG=' +
-              `${process.env.CI_ACTION_REF_NAME_SLUG}`);
+      `${process.env.CI_ACTION_REF_NAME_SLUG}`);
   } else {
-    core.warning('Environment variables "GITHUB_REF" and ' +
-                 '"GITHUB_HEAD_REF" not set. ' +
-                 'Cannot set "CI_ACTION_REF_NAME" and ' +
-                 '"CI_ACTION_REF_NAME_SLUG".');
+    core.info('Environment variables "GITHUB_REF" and ' +
+      '"GITHUB_HEAD_REF" not set. ' +
+      'Cannot set "CI_ACTION_REF_NAME" and ' +
+      '"CI_ACTION_REF_NAME_SLUG".');
   }
 
   if (headRef) {
     core.exportVariable('CI_HEAD_REF_SLUG', slugify(headRef));
     core.info(`Set CI_HEAD_REF_SLUG=${process.env.CI_HEAD_REF_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_HEAD_REF" not set. ' +
-                 'Cannot set "CI_HEAD_REF_SLUG".');
+    core.info('Environment variable "GITHUB_HEAD_REF" not set. ' +
+      'Cannot set "CI_HEAD_REF_SLUG".');
   }
 
   core.exportVariable('CI_HEAD_REF', headRef);
@@ -169,8 +169,8 @@ try {
     core.exportVariable('CI_BASE_REF_SLUG', slugify(baseRef));
     core.info(`Set CI_BASE_REF_SLUG=${process.env.CI_BASE_REF_SLUG}`);
   } else {
-    core.warning('Environment variable "GITHUB_BASE_REF" not set. ' +
-                 'Cannot set "CI_BASE_REF_SLUG".');
+    core.info('Environment variable "GITHUB_BASE_REF" not set. ' +
+      'Cannot set "CI_BASE_REF_SLUG".');
   }
 
   core.exportVariable('CI_BASE_REF', baseRef);
@@ -182,8 +182,8 @@ try {
     core.exportVariable('CI_SHA_SHORT', getShaShort(sha));
     core.info(`Set CI_SHA_SHORT=${process.env.CI_SHA_SHORT}`);
   } else {
-    core.warning('Environment variable "GITHUB_SHA" not set. ' +
-                 'Cannot set "CI_SHA_SHORT".');
+    core.info('Environment variable "GITHUB_SHA" not set. ' +
+      'Cannot set "CI_SHA_SHORT".');
   }
 
   core.exportVariable('CI_SHA', sha);
