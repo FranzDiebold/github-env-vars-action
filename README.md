@@ -2,7 +2,7 @@
 
 [![GitHub Action: View on Marketplace](https://img.shields.io/badge/GitHub%20Action-View_on_Marketplace-28a745?logo=github)](https://github.com/marketplace/actions/github-environment-variables-action)
 [![Demo: available](https://img.shields.io/badge/Demo-available-orange)](.github/workflows/demo.yml)
-[![Version: v2.2.0](https://img.shields.io/badge/Version-v2.2.0-brightgreen)](https://github.com/FranzDiebold/github-env-vars-action/releases/tag/v2.2.0)
+[![Version: v2.3.0](https://img.shields.io/badge/Version-v2.3.0-brightgreen)](https://github.com/FranzDiebold/github-env-vars-action/releases/tag/v2.3.0)
 [![Lint and Test](https://github.com/FranzDiebold/github-env-vars-action/workflows/Lint%20and%20Test/badge.svg)](https://github.com/FranzDiebold/github-env-vars-action/actions?query=workflow%3A%22Lint+and+Test%22)
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
 
@@ -30,6 +30,8 @@ A [GitHub Action](https://github.com/features/actions) to expose useful environm
 | `CI_BASE_REF`              | Only set for forked repositories / pull request. The branch of the base repository / the base branch name. Copy of `GITHUB_BASE_REF` - for reasons of completeness. | `main`                                |
 | `CI_SHA_SHORT`             | The shortened commit SHA (8 characters) that triggered the workflow.                                                                                           | `ffac537e`                                 |
 | `CI_SHA`                   | The commit SHA that triggered the workflow. Copy of `GITHUB_SHA` - for reasons of completeness.                                                                | `ffac537e6cbbf934b08745a378932722df287a53` |
+| `CI_PR_TITLE`              | The title of the pull request. Only set for pull requests.                                                                                                     | `Add feature xyz.`                         |
+| `CI_PR_DESCRIPTION`        | The description of the pull request. Only set for pull requests.                                                                                               | `The feature xyz is the [...]`             |
 | `CI_ACTOR`                 | The name of the person or app that initiated the workflow. Copy of `GITHUB_ACTOR` - for reasons of completeness.                                               | `octocat`                                  |
 | `CI_EVENT_NAME`            | The name of the webhook event that triggered the workflow. Copy of `GITHUB_EVENT_NAME` - for reasons of completeness.                                          | `push` or `pull_request`                   |
 | `CI_RUN_ID`                | A unique number for each run within a repository. This number does not change if you re-run the workflow run. Copy of `GITHUB_RUN_ID` - for reasons of completeness. | `397746731`                          |
