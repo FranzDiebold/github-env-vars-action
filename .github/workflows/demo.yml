@@ -47,6 +47,14 @@ jobs:
           echo "GITHUB_RUN_NUMBER=$GITHUB_RUN_NUMBER"
           echo "GITHUB_WORKFLOW=$GITHUB_WORKFLOW"
           echo "GITHUB_ACTION=$GITHUB_ACTION"
+      - name: Set env value from another env.
+        run: |
+          echo "Let's output my env vars:"
+          echo "MY_GIT_SHA=$MY_GIT_SHA"
+          echo "MY_GIT_REF=$MY_GIT_REF"
+        env:
+          MY_GIT_SHA: "${{ env.CI_SHA_SHORT }}"
+          MY_GIT_REF: "${{ env.CI_REF_NAME }}"
 
   windows:
     name: Windows Demo
