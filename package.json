@@ -1,6 +1,6 @@
 {
   "name": "github-env-vars-action",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "A GitHub Action to expose useful environment variables.",
   "main": "index.js",
   "scripts": {
@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/FranzDiebold/github-env-vars-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.7",
-    "@actions/github": "^4.0.0"
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.28.5",
-    "eslint": "^7.25.0",
+    "@vercel/ncc": "^0.33.1",
+    "eslint": "^8.7.0",
     "eslint-config-google": "^0.14.0",
-    "jest": "^26.6.3"
+    "jest": "^27.4.7"
   }
 }
