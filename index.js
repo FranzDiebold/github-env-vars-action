@@ -186,6 +186,13 @@ try {
   const pullRequest = github.context.payload &&
       github.context.payload.pull_request;
   if (pullRequest) {
+    const prNumber = pullRequest.number;
+    core.exportVariable('CI_PR_NUMBER', prNumber);
+    core.info(`Set CI_PR_NUMBER=${process.env.CI_PR_NUMBER}`);
+
+    core.exportVariable('CI_PR_ID', prNumber);
+    core.info(`Set CI_PR_ID=${process.env.CI_PR_ID}`);
+
     const prTitle = pullRequest.title;
     core.exportVariable('CI_PR_TITLE', prTitle);
     core.info(`Set CI_PR_TITLE=${process.env.CI_PR_TITLE}`);
