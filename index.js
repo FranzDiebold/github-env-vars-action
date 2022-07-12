@@ -186,6 +186,13 @@ try {
   const pullRequest = github.context.payload &&
       github.context.payload.pull_request;
   if (pullRequest) {
+    const prSha = github.event.pull_request.head.sha;
+    core.exportVariable('CI_PR_SHA_SHORT', getShaShort(prSha));
+    core.info(`Set CI_PR_SHA_SHORT=${process.env.CI_PR_SHA_SHORT}`);
+
+    core.exportVariable('CI_PR_SHA', prSha);
+    core.info(`Set CI_PR_SHA=${process.env.CI_PR_SHA}`);
+
     const prNumber = pullRequest.number;
     core.exportVariable('CI_PR_NUMBER', prNumber);
     core.info(`Set CI_PR_NUMBER=${process.env.CI_PR_NUMBER}`);
