@@ -126,6 +126,7 @@ jobs:
           echo "CI_REF=$CI_REF"
           echo "CI_HEAD_REF_SLUG=$CI_HEAD_REF_SLUG"
           echo "CI_HEAD_REF=$CI_HEAD_REF"
+          echo "CI_BASE_REF_SLUG=$CI_BASE_REF_SLUG"
           echo "CI_BASE_REF=$CI_BASE_REF"
           echo "CI_SHA_SHORT=$CI_SHA_SHORT"
           echo "CI_SHA=$CI_SHA"
