@@ -192,7 +192,7 @@ try {
   const pullRequest = github.context.payload &&
       github.context.payload.pull_request;
   core.info('.............########');
-  core.info(github.context.payload);
+  core.info(JSON.stringify(github.context.payload));
   core.info('.............########');
   if (pullRequest) {
     core.exportVariable('CI_PR_SHA', prSha);
