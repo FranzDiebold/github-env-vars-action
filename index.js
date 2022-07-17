@@ -186,7 +186,7 @@ try {
   const pullRequest = github.context.payload &&
       github.context.payload.pull_request;
   if (pullRequest) {
-    const prSha = github.event.pull_request.head.sha;
+    const prSha = pullRequest.head.sha;
     core.exportVariable('CI_PR_SHA_SHORT', getShaShort(prSha));
     core.info(`Set CI_PR_SHA_SHORT=${process.env.CI_PR_SHA_SHORT}`);
 
@@ -209,7 +209,8 @@ try {
     core.info(`Set CI_PR_DESCRIPTION=${process.env.CI_PR_DESCRIPTION}`);
   } else {
     core.info('No pull request. ' +
-      'Cannot set "CI_PR_TITLE" and "CI_PR_DESCRIPTION".');
+      'Cannot set "CI_PR_SHA_SHORT", "CI_PR_SHA", "CI_PR_NUMBER", ' +
+      '"CI_PR_ID", "CI_PR_TITLE" and "CI_PR_DESCRIPTION".');
   }
 
   const actor = process.env.GITHUB_ACTOR;
