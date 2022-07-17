@@ -185,11 +185,10 @@ try {
 
   const pullRequest = github.context.payload &&
       github.context.payload.pull_request;
+  core.info('.............########');
+  core.info(github.context.payload);
+  core.info('.............########');
   if (pullRequest) {
-    core.info('.............########');
-    core.info(pullRequest);
-    core.info('.............########');
-
     core.exportVariable('CI_PR_SHA', prSha);
     core.info(`Set CI_PR_SHA=${process.env.CI_PR_SHA}`);
 
