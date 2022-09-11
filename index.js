@@ -4,17 +4,20 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 /**
- * Slugify a given string.
+ * Slugify a given string to a maximum length.
  * @param {string} inputString
+ * @param {int} maxLength
  * @return {string} The slugified string.
  */
-function slugify(inputString) {
+function slugify(inputString, maxLength = 63) {
   return inputString
       .toLowerCase()
       .replace(/[^a-z0-9 -]/g, ' ') // remove invalid chars
       .replace(/^\s+|\s+$/g, '') // trim
       .replace(/\s+/g, '-') // collapse whitespace and replace by -
-      .replace(/-+/g, '-'); // collapse dashes
+      .replace(/-+/g, '-') // collapse dashes
+      .slice(0, maxLength) // truncate to maximum length
+      .replace(/[-]+$/g, ''); // trim trailing -
 }
 
 /**
