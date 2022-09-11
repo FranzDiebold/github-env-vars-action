@@ -6,6 +6,16 @@ test('slugifies text', () => {
   expect(slugify(' /abc+efg*123/test§xyz ')).toEqual('abc-efg-123-test-xyz');
 });
 
+test('slugifies a text to a maximum length', () => {
+  expect(slugify(' /abc+efg*123/test§xyz 1234567 /(ö)  ', 16))
+      .toEqual('abc-efg-123-test');
+});
+
+test('slugifies a text to a maximum length with trailing dash', () => {
+  expect(slugify(' /abc+efg*123/test§xyz 1234567 /(ö)  ', 17))
+      .toEqual('abc-efg-123-test');
+});
+
 test('slugifies ref name with dash', () => {
   expect(slugify('feat/feature-branch-1')).toEqual('feat-feature-branch-1');
 });
