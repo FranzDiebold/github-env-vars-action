@@ -2,7 +2,7 @@ name: 'GitHub Environment Variables Action'
 description: 'Expose useful Environment Variables.'
 author: 'Franz Diebold'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
 branding:
   icon: 'plus-circle'
