@@ -10,6 +10,10 @@ install:  ## Install dependencies.
 lint:  ## Lint code.
 	npm run lint
 
+.PHONY: audit
+audit:  ## Audit and fix NPM vulnerabilities.
+	npm audit fix
+
 .PHONY: test
 test:  ## Run tests.
 	npm run test
