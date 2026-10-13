@@ -62,6 +62,17 @@ function getShaShort(fullSha) {
   return fullSha ? fullSha.substring(0, 8) : null;
 }
 
+/**
+ * Get the head SHA for pull requests, otherwise the given SHA.
+ * @param {string} sha
+ * @param {object} pullRequest
+ * @return {string} The action SHA.
+ */
+function getActionSha(sha, pullRequest) {
+  return (pullRequest && pullRequest.head && pullRequest.head.sha) || sha ||
+    null;
+}
+
 // https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables#default-environment-variables
 
 try {
@@ -222,6 +233,19 @@ try {
       '"CI_PR_ID", "CI_PR_TITLE" and "CI_PR_DESCRIPTION".');
   }
 
+  const actionSha = getActionSha(sha, pullRequest);
+  if (actionSha) {
+    core.exportVariable('CI_ACTION_SHA_SHORT', getShaShort(actionSha));
+    core.info(`Set CI_ACTION_SHA_SHORT=${process.env.CI_ACTION_SHA_SHORT}`);
+
+    core.exportVariable('CI_ACTION_SHA', actionSha);
+    core.info(`Set CI_ACTION_SHA=${process.env.CI_ACTION_SHA}`);
+  } else {
+    core.info('Environment variable "GITHUB_SHA" not set and ' +
+      'no pull request. ' +
+      'Cannot set "CI_ACTION_SHA_SHORT" and "CI_ACTION_SHA".');
+  }
+
   const actor = process.env.GITHUB_ACTOR;
   core.exportVariable('CI_ACTOR', actor);
   core.info(`Set CI_ACTOR=${process.env.CI_ACTOR}`);
@@ -255,6 +279,7 @@ module.exports = {
   getRepositoryName,
   getRefName,
   getShaShort,
+  getActionSha,
 };
 
 

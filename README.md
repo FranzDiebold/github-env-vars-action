@@ -32,6 +32,8 @@ A [GitHub Action](https://github.com/features/actions) to expose useful environm
 | `CI_SHA`                   | The commit SHA that triggered the workflow. Copy of `GITHUB_SHA` - for reasons of completeness.                                                                | `ffac537e6cbbf934b08745a378932722df287a53` |
 | `CI_PR_SHA_SHORT`          | The shortened latest commit SHA in the pull request's base branch. Short version of `CI_PR_SHA`. Only set for pull requests.                                   | `010b249`                                  |
 | `CI_PR_SHA`                | The latest commit SHA in the pull request's base branch. Long version of `CI_PR_SHA_SHORT`. Only set for pull requests.                                        | `010b2491902d50e8623934f5bc43763ff5991642` |
+| `CI_ACTION_SHA_SHORT`      | The shortened commit SHA (8 characters) that triggered the workflow. For pull requests it is the shortened SHA of the pull request's *head* commit. Short version of `CI_ACTION_SHA`. | `ffac537e` or<br> `010b2491`                |
+| `CI_ACTION_SHA`            | The commit SHA that triggered the workflow. For pull requests it is the SHA of the pull request's *head* commit (`CI_PR_SHA`), otherwise `CI_SHA`. Long version of `CI_ACTION_SHA_SHORT`. | `ffac537e6cbbf934b08745a378932722df287a53` or<br> `010b2491902d50e8623934f5bc43763ff5991642` |
 | `CI_PR_NUMBER`             | The number of the pull request. Only set for pull requests.                                                                                                    | `42`                                       |
 | `CI_PR_ID`                 | Copy of `CI_PR_NUMBER` for completeness.                                                                                                                       | `42`                                       |
 | `CI_PR_TITLE`              | The title of the pull request. Only set for pull requests.                                                                                                     | `Add feature xyz.`                         |
@@ -90,6 +92,8 @@ steps:
       echo "CI_SHA=$CI_SHA"
       echo "CI_PR_SHA_SHORT=$CI_PR_SHA_SHORT"
       echo "CI_PR_SHA=$CI_PR_SHA"
+      echo "CI_ACTION_SHA_SHORT=$CI_ACTION_SHA_SHORT"
+      echo "CI_ACTION_SHA=$CI_ACTION_SHA"
       echo "CI_PR_NUMBER=$CI_PR_NUMBER"
       echo "CI_PR_ID=$CI_PR_ID"
       echo "CI_PR_TITLE=$CI_PR_TITLE"
