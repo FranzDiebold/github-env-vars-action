@@ -1,5 +1,6 @@
 const {
   slugify, getRepositoryOwner, getRepositoryName, getRefName, getShaShort,
+  getActionSha,
 } = require('./index');
 
 test('slugifies text', () => {
@@ -68,4 +69,19 @@ test('gets short SHA', () => {
 
 test('gets short SHA for empty SHA', () => {
   expect(getShaShort(undefined)).toBeFalsy();
+});
+
+test('gets action SHA for pull request', () => {
+  const pullRequest = {head: {sha: '010b2491902d50e8623934f5bc43763ff5991642'}};
+  expect(getActionSha('ffac537e6cbbf934b08745a378932722df287a53', pullRequest))
+      .toEqual('010b2491902d50e8623934f5bc43763ff5991642');
+});
+
+test('gets action SHA for non pull request', () => {
+  expect(getActionSha('ffac537e6cbbf934b08745a378932722df287a53', undefined))
+      .toEqual('ffac537e6cbbf934b08745a378932722df287a53');
+});
+
+test('gets action SHA for empty SHA', () => {
+  expect(getActionSha(undefined, undefined)).toBeFalsy();
 });
